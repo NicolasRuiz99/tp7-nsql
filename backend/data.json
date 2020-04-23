@@ -1,0 +1,95 @@
+{
+    "hero_name": "Capitán América",
+    "name": "Steven Grant Rogers",
+    "year": "1941",
+    "home": "MARVEL",
+    "biography": "Steve Rogers nació durante la Depresión y creció, convirtiéndose en un joven débil en una familia pobre. Su padre murió cuando él era un niño; su madre, durante la adolescencia de Steve. Horrorizado ante un noticiario que mostraba a los nazis en Europa, Rogers intentó alistarse en el ejército.",
+    "equipment": ["Escudo de Vibranium"],
+    "images": 1,
+    "code": "capitanamerica"
+} {
+    "hero_name": "Daredevil",
+    "name": "Matthew Michael 'Matt' Murdock",
+    "year": "1964",
+    "home": "MARVEL",
+    "biography": "Los orígenes de Daredevil provienen de un accidente que tuvo en su infancia la cual le dio habilidades especiales. Mientras crecía en el vecindario irlandés-estadounidense de Hell's Kitchen de la clase obrera, históricamente áspero y asolado por el crimen, en la ciudad de Nueva York, Matt Murdock es cegado por una sustancia radioactiva que cae de un camión después salvar a un hombre que estaba por ser atropellado por un auto. Si bien ya no puede ver, la exposición radioactiva aumenta sus sentidos restantes más allá de la capacidad humana normal y le da un 'sentido de radar'. Su padre, un boxeador llamado Jack Murdock, lo apoya a medida que crece, aunque luego unos mafiosos lo matan después de negarse a perder una combate arreglado. Después de ponerse un traje rojo oscuro y amarillo (más tarde solo rojo), Matt busca venganza contra los asesinos de su padre como el superhéroe Daredevil, encontrándose con varios enemigos, como Bullseye y Kingpin.",
+    "equipment": [],
+    "images": 1,
+    "code": "daredevil"
+} {
+    "hero_name": "Deadpool",
+    "name": "Wade Winston Wilson",
+    "year": "1991",
+    "home": "MARVEL",
+    "biography": "La historia de fondo del personaje ha sido presentada como vago y está sujeto a cambios, y dentro de la narración no puede recordar su historia personal debido a una condición mental. Si su nombre era o no Wade Wilson está sujeto a especulaciones ya que uno de sus enemigos, T-Ray, afirma en Deadpool # 33 que él es el verdadero Wade Wilson y que Deadpool es un asesino cruel que le robó su identidad.12​Ha habido otras historias dudosas sobre su historia, en un momento el supervillano Loki afirmó ser su padre. Con frecuencia, las revelaciones son reconectadas más tarde o ignoradas por completo, y en un tema, el propio Deadpool bromeó que si Wade Wilson es o no realmente depende de qué escritor prefiera el lector.1
+    Él ha profesado ser canadiense .15​ La historia original lo hizo unirse al programa Arma X después de ser expulsado de las Fuerzas Especiales del Ejército de EE.UU.Y recibir un factor de curación artificial basado en las habilidades de Wolverine al Dr.Emrys Killebrew,
+    uno de los científicos principales.
+    ",
+    "equipment": [],
+    "images": 1,
+    "code": "deadpool"
+} {
+    "hero_name": "Doctor Strange",
+    "name": "Stephen Strange",
+    "year": "1963",
+    "home": "MARVEL",
+    "biography": "La historia de origen del personaje relata que una vez fue un cirujano brillante pero egoísta. Después de que un accidente automovilístico dañara gravemente sus manos y obstaculiza su capacidad para realizar una cirugía, busca una forma de repararlas encontrándose con el Anciano. Después de convertirse en uno de los alumnos del Hechicero Supremo, se convierte en un practicante tanto de las artes místicas como de las artes marciales. Además de conocer muchos hechizos poderosos, tiene un traje con dos objetos místicos: la Capa de Levitación y el Ojo de Agamotto, que le otorgan poderes adicionales. Strange es ayudado en el camino por su amigo y sirviente, Wong, y una gran variedad de objetos místicos. Toma residencia en una mansión llamada Sanctum Sanctorum, ubicado en la ciudad de Nueva York. Más tarde, Strange toma el título de Hechicero Supremo.",
+    "equipment": ["Ojo de Agamotto", "Orbe de Agamotto", "Capa de Levitación", "Libro de los vishanti"],
+    "images": 1,
+    "code": "doctorstrange"
+} {
+    "hero_name": "Hulk",
+    "name": "Robert Bruce Banner",
+    "year": "1962",
+    "home": "MARVEL",
+    "biography": "Después de una exposición accidental a los rayos gamma durante la detonación de una bomba experimental, Banner se transforma físicamente en Hulk cuando está sometido a estrés emocional, a su voluntad o en contra de ella, lo que a menudo lleva a destrozos y conflictos que complican la vida civil de Banner. El nivel de fuerza de Hulk se transmite normalmente de forma proporcional a su nivel de ira. Comúnmente retratado como un salvaje furioso, Hulk ha sido representado con otras personalidades basadas en la mente fracturada de Banner, desde una fuerza descerebrada y destructiva hasta un brillante guerrero o genio científico por derecho propio.",
+    "equipment": [],
+    "images": 1,
+    "code": "hulk"
+} {
+    "hero_name": "Iron Man",
+    "name": "Anthony Edward Stark",
+    "year": "1963",
+    "home": "MARVEL",
+    "biography": "Anthony Edward Stark, más conocido como Tony Stark, un multimillonario magnate empresarial estadounidense, playboy e ingenioso científico, sufre una grave lesión en el pecho durante un secuestro. Cuando sus captores intentan forzarlo a construir un arma de destrucción masiva crea, en cambio, una armadura poderosa para salvar su vida y escapar del cautiverio. Más tarde, Stark desarrolla su traje, agregando armas y otros dispositivos tecnológicos que diseñó a través de su compañía, Industrias Stark. Él usa el traje y las versiones sucesivas para proteger al mundo como Iron Man. Aunque al principio ocultó su verdadera identidad, Stark finalmente declaró que era, de hecho, Iron Man en un anuncio público.",
+    "equipment": ["Armadura"],
+    "images": 1,
+    "code": "ironman"
+} {
+    "hero_name": "Spider-Man",
+    "name": "Peter Benjamin Parker",
+    "year": "1962",
+    "home": "MARVEL",
+    "biography": "Spider-Man es el alias de Peter Parker, un huérfano criado por su tía May y su tío Ben en la Ciudad de Nueva York después de que sus padres Richard y Mary Parker murieron en un accidente aéreo. Lee y Ditko tuvieron que lidiar con los problemas de la adolescencia y los problemas financieros, y lo acompañaron con muchos personajes de apoyo, como J. Jonah Jameson, Flash Thompson, Harry Osborn, los intereses románticos, Gwen Stacy y Mary Jane Watson, y enemigos como el Doctor Octopus, Kingpin, Duende Verde y Venom. Su historia de origen lo tiene adquiriendo habilidades relacionadas con la araña después de un mordisco de una araña radioactiva; estos incluyen aferrarse a las superficies, disparar telarañas desde dispositivos montados en la muñeca y detectar el peligro con su 'sentido arácnido'.",
+    "equipment": ["Traje", "Escudo psíquico"],
+    "images": 1,
+    "code": "spiderman"
+} {
+    "hero_name": "Thor",
+    "name": "Thor Odinson",
+    "year": "1962",
+    "home": "MARVEL",
+    "biography": "El padre de Thor, Odín, decide que su hijo necesita que le enseñe la humildad y, en consecuencia, coloca a Thor (sin recuerdos de la divinidad) en el cuerpo y los recuerdos de un estudiante de medicina humana existente, parcialmente discapacitado, Donald Blake. Después de convertirse en médico y de vacaciones en Noruega, Blake presencia la llegada de una partida de exploración alienígena. Blake huye de los extraterrestres a una cueva. Después de descubrir el martillo de Thor, Mjolnir (disfrazado como un bastón) y golpearlo contra una roca, se transforma en el dios del trueno. ​Más tarde, en Thor# 159, se revela que Blake siempre ha sido Thor, el hechizo de Odin lo ha llevado a olvidar su historia como El Dios del Trueno y creerse mortal",
+    "equipment": ["Mjölnir"],
+    "images": 1,
+    "code": "thor"
+} {
+    "hero_name": "Nick Fury",
+    "name": "TNicholas Joseph 'Nick' Fury",
+    "year": "1963",
+    "home": "MARVEL",
+    "biography": "Nicholas Joseph Fury era el mayor de los tres hijos de Jack Fury. Su padre era un ciudadano de los Estados Unidos que se alistó en el Cuerpo Real de Vuelo del Reino Unido de Gran Bretaña e Irlanda durante la Primera Guerra Mundial. Este personaje de poca importancia en el Universo Marvel solo fue protagonista en el número 76 de Sgt. Fury and his Howling Commands (marzo de 1970). De acuerdo con ese ejemplar, Jack se alistó en el Cuerpo en 1916 y se quedó estacionado en Francia durante la Tercera República. Consiguió derribar a Manfred von Richthofen al poco de comenzar su carrera aérea y se convirtió en un aviador muy condecorado al final de la guerra en 1918.",
+    "equipment": ["Uniforme S.H.I.E.L.D."],
+    "images": 1,
+    "code": "nickfury"
+} {
+    "hero_name": "Ghost Rider",
+    "name": "Johnny Blaze",
+    "year": "1972",
+    "home": "MARVEL",
+    "biography": "El primer Ghost Rider sobrenatural es un motorista, Johnny Blaze, que, con el fin de salvar la vida de su padre, accedió a dar su alma a '
+    Satán ' (quien más tarde reveló ser un archi-demonio llamado Mephisto). Por la noche, y cuando todo el mal, Blaze encuentra su carne consumida por el fuego del infierno, haciendo que su cabeza se convierta en un cráneo en llamas. Entonces se sube a una motocicleta de fuego y lanza ráfagas de fuego infernal desde su cuerpo, por lo general desde sus manos esqueléticas. Con el tiempo se entera de que se ha unido con el demonio Zarathos.",
+    "equipment": [],
+    "images": 1,
+    "code": "ghostrider"
+}
