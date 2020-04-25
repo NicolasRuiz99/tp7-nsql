@@ -74,7 +74,7 @@ def add():
         if 'equipment' in request.json:
             equipment = request.json["equipment"]
             nuevo = {
-                "id":db.list.count()+1,
+                "id":(db.list.count()+1),
                 "name":name,
                 "character":character,
                 "biography":biography,
@@ -85,7 +85,7 @@ def add():
             }
         else:
             nuevo = {
-                "id":db.list.count()+1,
+                "id":(db.list.count()+1),
                 "name":name,
                 "character":character,
                 "biography":biography,
@@ -110,29 +110,18 @@ def modify():
         house = request.json ["house"]
         year = request.json ["year"]
         images = request.json ["images"]
+        equipment = request.json ["equipment"]
 
-        if 'equipment' in request.json:
-            equipment = request.json["equipment"]
-            nuevo = {
-                "id":id,
-                "name":name,
-                "character":character,
-                "biography":biography,
-                "house":house,
-                "year":year,
-                "images":images,
-                "equipment":equipment
-            }
-        else:
-            nuevo = {
-                "id":id,
-                "name":name,
-                "character":character,
-                "biography":biography,
-                "house":house,
-                "year":year,
-                "images":images
-            }
+        nuevo = {
+            "id":id,
+            "name":name,
+            "character":character,
+            "biography":biography,
+            "house":house,
+            "year":year,
+            "images":images,
+            "equipment":equipment
+        }
         db.list.update_one({"id":nuevo["id"]},{"$set":nuevo})
         return "OK"
     except (Exception) as err:

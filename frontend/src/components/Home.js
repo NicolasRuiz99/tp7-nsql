@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import List from './List';
 import Error from './Error';
 import Loading from './Loading';
-import {listAll,deleteItem,listMarvel,listDC} from '../functions';
+import {listAll,listMarvel,listDC} from '../functions';
 
 const Home = ({type,search}) => {
 
@@ -12,18 +12,6 @@ const Home = ({type,search}) => {
     const [empty,setEmpty] = useState (false);
     const [refresh,setRefresh] = useState (false);
     const [loading,setLoading] = useState (false);
-
-    const deleteCoin = (rank) => {
-        setError (false);
-        deleteItem(rank)
-        .then(()=>{
-            setRefresh(true);
-        })
-        .catch((err)=>{
-            setError (true);
-            return;
-        })
-    }
 
     useEffect (()=>{
         if (search === ""){

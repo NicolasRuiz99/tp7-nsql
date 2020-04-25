@@ -13,7 +13,7 @@ const ListItem = ({item}) => {
             </div>
             <div className="card-body">
                 <p className="card-text">{item.biography.slice(0,150)}...</p>
-                <button type="button" class="btn btn-light">Ver detalles</button>
+                <Link type="button" className="btn btn-light" to={`/hero/${item.id}`} >Ver detalles</Link>
             </div>
             </div>
         </div>

@@ -22,7 +22,7 @@ const Navbar = ({setSearch}) => {
               <Link className="nav-link" type="button" to="/dc">DC</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" type="button" to="#">Insertar</Link>
+              <Link className="nav-link" type="button" to="/add">Insertar</Link>
             </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">

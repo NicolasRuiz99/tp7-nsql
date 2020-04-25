@@ -2,10 +2,9 @@ import React,{Fragment,useState} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
-import { search } from './functions';
-import Error from './components/Error';
-import CoinInfo from './components/CoinInfo';
+import HeroInfo from './components/HeroInfo';
 import './bootstrap.min.css';
+import AddHero from './components/AddHero';
 
 const App = () => {
 
@@ -34,6 +33,12 @@ const App = () => {
 						search = {search}
 					/>
 				)} />
+				<Route exact path="/hero/:id" render={(props)=>(
+					<HeroInfo 
+						id = {props.match.params.id}
+					/>
+				)} />
+				<Route exact path="/add" component={AddHero} />
 			</Switch>
 			</Router>
 		</Fragment>
