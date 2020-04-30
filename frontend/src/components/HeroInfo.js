@@ -16,6 +16,8 @@ const HeroInfo = ({id,history}) => {
     const [house,setHouse] = useState ("");
     const [year,setYear] = useState (0);
     const [equipment,setEquipment] = useState ("");
+    const [img_count,setImg_count] = useState (0);
+    const [countImages,setCountImages] = useState ([]);
 
     useEffect (()=>{
         setLoading (true);
@@ -30,6 +32,8 @@ const HeroInfo = ({id,history}) => {
             if (res.equipment){
                 setEquipment (res.equipment);
             }
+            setImg_count (res.img_count);
+            setCountImages (res.images.slice(0,res.img_count))
             setLoading (false);
         })
         .catch((err)=>{
@@ -53,8 +57,8 @@ const HeroInfo = ({id,history}) => {
                         house,
                         year,
                         images:info.images,
-                        equipment
-                    
+                        equipment,
+                        img_count
                 }
                 modItem (data)
                 .then (()=>{
@@ -103,15 +107,15 @@ const HeroInfo = ({id,history}) => {
                     :
                     <div className="row row-cols-1 row-cols-md-2">
                         <div class="col mb-8 order-md-1">
-                            {(info.images)?
+                            {(countImages)?
                             <div>
-                            {(info.images.length == 1)?
+                            {(countImages.length == 1)?
                                 <div className="text-center">
-                                    <img src={require (`../images/${info.images[0]}`)} height="330" width="560" className="img-thumbnail"></img>
+                                    <img src={`http://localhost:5000/image/${countImages[0]}`} height="330" width="560" className="img-thumbnail" alt="NO IMAGE"></img>
                                 </div>
                                 :
                                 <div className="text-center">
-                                    <CarouselImg images={info.images} />
+                                    <CarouselImg images={countImages} />
                                 </div>
                                 }
                                 </div>
@@ -149,7 +153,7 @@ const HeroInfo = ({id,history}) => {
                                     </div>
                                     {(house)?
                                     <div className="text-center">
-                                        <img src={require (`../images/${house.toLowerCase()}.jpg`)} className="img-fluid" height="60" width="230"></img>
+                                        <img src={`http://localhost:5000/image/${house.toLowerCase()}.jpg`} className="img-fluid" height="60" width="230"></img>
                                     </div>
                                     :
                                     null
@@ -161,7 +165,10 @@ const HeroInfo = ({id,history}) => {
                                     {(info.images)?
                                         <div className="form-group">
                                         <label for="img">Cantidad de imágenes</label>
-                                        <input type="number" className="form-control" id="img" defaultValue={info.images.length} min="0" max={info.images.length}/>
+                                        <input type="number" className="form-control" id="img" defaultValue={info.img_count} onChange={(e)=>{
+                                            setImg_count (e.target.value);
+                                            setCountImages (info.images.slice(0,e.target.value));
+                                        }}  min="1" max={info.images.length} required/>
                                         </div>
                                     :
                                     null

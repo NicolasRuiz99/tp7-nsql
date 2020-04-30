@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import {withRouter} from 'react-router-dom';
-import {alertConfirm, alertSuccess, alertError,addItem} from "../functions";
+import {alertConfirm, alertSuccess, alertError,addItem, upload} from "../functions";
 
 const AddHero = ({history}) => {
 
@@ -10,6 +10,8 @@ const AddHero = ({history}) => {
     const [house,setHouse] = useState ("MARVEL");
     const [year,setYear] = useState (0);
     const [equipment,setEquipment] = useState ("");
+    const [files,setFiles] = useState ([]);
+    const [images,setImages] = useState ([]);
 
     const add = async (e) => {
         e.preventDefault()
@@ -24,7 +26,7 @@ const AddHero = ({history}) => {
                         biography,
                         house,
                         year,
-                        images:["red_skull.jpg"]
+                        images
                     }
                 }else{
                     data = {
@@ -33,19 +35,28 @@ const AddHero = ({history}) => {
                         biography,
                         house,
                         year,
-                        images:["red_skull.jpg"],
+                        images,
                         equipment
                     }
-                }               
-                addItem (data)
-                .then (()=>{
-                    alertSuccess ()
-                    .then(()=>{
-                        history.push('/');
+                }              
+                upload(files)
+                .then ((res)=>{
+                    console.log(res);
+                    
+                    addItem (data)
+                    .then (()=>{
+                        alertSuccess ()
+                        .then(()=>{
+                            history.push('/');
+                        })
                     })
-                })
-                .catch ((err)=>{
-                    alertError ()
+                    .catch ((err)=>{
+                        alertError ()
+                        return;
+                    })
+                }) 
+                .catch(err=>{
+                    alertError();
                     return;
                 })
             }else{
@@ -53,6 +64,22 @@ const AddHero = ({history}) => {
             }
         }))
         
+    }
+
+    const handleFiles = (e) => {
+        const files = e.target.files;
+
+        let images = [];
+
+        let data = new FormData()
+
+        for(let x = 0; x<files.length; x++) {
+            data.append('file', files[x])
+            images.push(files[x].name);
+        }
+        setImages (images)
+        setFiles (data);
+
     }
 
     return (
@@ -87,7 +114,7 @@ const AddHero = ({history}) => {
             </div>
             {(house)?
             <div className="text-center">
-            <img src={require (`../images/${house.toLowerCase()}.jpg`)} className="img-fluid" height="60" width="230"></img>                            
+            <img src={`http://localhost:5000/image/${house.toLowerCase()}.jpg`} className="img-fluid" height="60" width="230"></img>                            
             </div>                        
             :
             null
@@ -97,9 +124,10 @@ const AddHero = ({history}) => {
             <input type="text" className="form-control" id="equipment" placeholder="Armas y armadura" defaultValue={equipment} onChange={(e)=>setEquipment(e.target.value)} />
             </div>                                                                                
             <div className="form-group">
-            <label for="img">Cantidad de imágenes</label>
-            <input type="number" className="form-control" id="img" min="0"/>
-            </div>                                                                         
+                <label for="exampleInputFile">Cargar imagen</label>
+                <input type="file" className="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" onChange={(e)=>handleFiles(e)} multiple required/>
+                <small id="fileHelp" className="form-text text-muted">Imagen del superhéroe. (Mínimo 1)</small>
+            </div>                                                                       
             <p class="text-danger">(*) Campos obligatorios</p>
             <button type="submit" class="btn btn-primary">Agregar superhéroe</button>
         </form>     

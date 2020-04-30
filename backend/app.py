@@ -1,13 +1,33 @@
 from flask import Flask
-from flask import render_template, jsonify, request, redirect, url_for
+from flask import render_template, jsonify, request, redirect, url_for,send_file
 import json
 from connectiondb import inicializar_db,cargar_datos
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)
+app.config['IMG_FOLDER'] = './img'
+
+@app.route('/upload', methods=['POST'])
+def fileUpload():
+    try:
+        for file in request.files.getlist('file'):
+            file.save(os.path.join(app.config['IMG_FOLDER'], file.filename))   
+        return str(request.files)
+    except (Exception) as err:
+        return str(err), 500
+
+@app.route('/image/<name>',methods=['GET'])
+def getImage(name):
+    try:
+        filename = './img/' + name
+        return send_file(filename, mimetype='image/jpeg')
+    except (Exception) as err:
+        return str(err), 500
 
 @app.route('/cargar_db', methods=['GET'])
+@app.before_first_request
 def cargar_db():
     try:
         db = inicializar_db()
@@ -81,7 +101,8 @@ def add():
                 "house":house,
                 "year":year,
                 "images":images,
-                "equipment":equipment
+                "equipment":equipment,
+                "img_count":len(images)
             }
         else:
             nuevo = {
@@ -91,7 +112,8 @@ def add():
                 "biography":biography,
                 "house":house,
                 "year":year,
-                "images":images
+                "images":images,
+                "img_count":len(images)
             }
         db.list.insert_one(nuevo)
         return "OK"
@@ -111,6 +133,7 @@ def modify():
         year = request.json ["year"]
         images = request.json ["images"]
         equipment = request.json ["equipment"]
+        img_count = request.json ["img_count"]
 
         nuevo = {
             "id":id,
@@ -120,7 +143,8 @@ def modify():
             "house":house,
             "year":year,
             "images":images,
-            "equipment":equipment
+            "equipment":equipment,
+            "img_count":img_count
         }
         db.list.update_one({"id":nuevo["id"]},{"$set":nuevo})
         return "OK"

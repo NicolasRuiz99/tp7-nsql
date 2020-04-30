@@ -108,6 +108,19 @@ const get = (id) => {
         .catch(err => { throw err.response.data })
 }
 
+const upload = (formData) => {
+    return axios({
+            method: 'post',
+            url: 'http://localhost:5000/upload',
+            data: formData,
+            config: { headers: { 'Content-Type': 'multipart/form-data' } }
+        })
+        .then(res => {
+            return res.data
+        })
+        .catch(err => { throw err.response.data })
+}
+
 export {
     alertConfirm,
     alertError,
@@ -119,5 +132,6 @@ export {
     listDC,
     search,
     get,
-    addItem
+    addItem,
+    upload
 };

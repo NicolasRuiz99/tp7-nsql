@@ -9,7 +9,8 @@
             "hulk.jpg",
             "hulk1.jpg",
             "hulk2.jpg"
-        ]
+        ],
+        "img_count": 3
     },
     {
         "id": 2,
@@ -21,7 +22,8 @@
         "images": [
             "ant_man.jpg",
             "ant_man1.jpg"
-        ]
+        ],
+        "img_count": 2
     },
     {
         "id": 3,
@@ -35,7 +37,8 @@
             "thor1.jpg",
             "thor2.jpg"
         ],
-        "equipment": "Mjolnir"
+        "equipment": "Mjolnir",
+        "img_count": 3
     },
     {
         "id": 4,
@@ -46,7 +49,8 @@
         "year": 1941,
         "images": [
             "red_skull.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 5,
@@ -60,7 +64,8 @@
             "iron_man1.jpg",
             "iron_man2.jpg"
         ],
-        "equipment": "Mark Armor"
+        "equipment": "Mark Armor",
+        "img_count": 3
     },
     {
         "id": 6,
@@ -72,7 +77,8 @@
         "images": [
             "gamora.jpg",
             "gamora1.jpg"
-        ]
+        ],
+        "img_count": 2
     },
     {
         "id": 7,
@@ -86,7 +92,8 @@
             "thanos1.jpg",
             "thanos2.jpg"
         ],
-        "equipment": "Infinity Gauntlet"
+        "equipment": "Infinity Gauntlet",
+        "img_count": 3
     },
     {
         "id": 8,
@@ -100,7 +107,8 @@
             "batman1.jpg",
             "batman2.jpg"
         ],
-        "equipment": "Batcinturón"
+        "equipment": "Batcinturón",
+        "img_count": 3
     },
     {
         "id": 9,
@@ -111,7 +119,8 @@
         "year": 1976,
         "images": [
             "rocket_racoon.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 10,
@@ -122,7 +131,8 @@
         "year": 1940,
         "images": [
             "robin.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 11,
@@ -133,7 +143,8 @@
         "images": [
             "nick_fury.jpg"
         ],
-        "year": 1963
+        "year": 1963,
+        "img_count": 1
     },
     {
         "id": 12,
@@ -144,7 +155,8 @@
         "images": [
             "the_thing.jpg"
         ],
-        "year": 1961
+        "year": 1961,
+        "img_count": 1
     },
     {
         "id": 13,
@@ -156,7 +168,8 @@
             "wolverine.jpg",
             "wolverine1.jpg"
         ],
-        "year": 1974
+        "year": 1974,
+        "img_count": 2
     },
     {
         "id": 14,
@@ -169,7 +182,8 @@
             "aquaman1.jpg"
         ],
         "equipment": "Tridente De Poseidón",
-        "year": 1941
+        "year": 1941,
+        "img_count": 2
     },
     {
         "id": 15,
@@ -181,7 +195,8 @@
             "wonder_woman.jpg"
         ],
         "equipment": " Lasso Of Truth",
-        "year": 1941
+        "year": 1941,
+        "img_count": 1
     },
     {
         "id": 16,
@@ -192,7 +207,8 @@
         "images": [
             "human_torch.jpg"
         ],
-        "year": 1961
+        "year": 1961,
+        "img_count": 1
     },
     {
         "id": 17,
@@ -204,7 +220,8 @@
             "invisible_woman.jpg",
             "invisible_woman1.jpg"
         ],
-        "year": 1961
+        "year": 1961,
+        "img_count": 2
     },
     {
         "id": 18,
@@ -215,7 +232,8 @@
         "images": [
             "green_arrow.jpg"
         ],
-        "year": 1941
+        "year": 1941,
+        "img_count": 1
     },
     {
         "id": 19,
@@ -228,7 +246,8 @@
             "green_lantern1.jpg"
         ],
         "equipment": "Power Ring",
-        "year": 1940
+        "year": 1940,
+        "img_count": 2
     },
     {
         "id": 20,
@@ -239,7 +258,8 @@
         "images": [
             "captain_marvel.jpg"
         ],
-        "year": 1968
+        "year": 1968,
+        "img_count": 1
     },
     {
         "id": 21,
@@ -250,7 +270,8 @@
         "year": 1967,
         "images": [
             "abomination.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 22,
@@ -261,7 +282,8 @@
         "year": 1986,
         "images": [
             "apocalypse.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 23,
@@ -272,7 +294,8 @@
         "year": 1966,
         "images": [
             "black_panther.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 24,
@@ -286,7 +309,8 @@
             "captain_america.jpg",
             "captain_america1.jpg",
             "captain_america2.jpg"
-        ]
+        ],
+        "img_count": 3
     },
     {
         "id": 25,
@@ -297,7 +321,8 @@
         "year": 1963,
         "images": [
             "cyclops.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 26,
@@ -308,7 +333,8 @@
         "year": 1964,
         "images": [
             "daredevil.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 27,
@@ -319,7 +345,8 @@
         "year": 1991,
         "images": [
             "deadpool.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 28,
@@ -330,7 +357,8 @@
         "year": 1980,
         "images": [
             "deathstroke.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 29,
@@ -342,7 +370,8 @@
         "year": 1963,
         "images": [
             "doctor_strange.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 30,
@@ -353,7 +382,8 @@
         "year": 1973,
         "images": [
             "drax.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 31,
@@ -365,7 +395,8 @@
         "year": 1981,
         "images": [
             "elektra.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 32,
@@ -377,7 +408,8 @@
         "images": [
             "falcon.jpg",
             "falcon1.jpg"
-        ]
+        ],
+        "img_count": 2
     },
     {
         "id": 33,
@@ -388,7 +420,8 @@
         "year": 1940,
         "images": [
             "flash.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 34,
@@ -399,7 +432,8 @@
         "year": 1990,
         "images": [
             "gambito.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 35,
@@ -410,7 +444,8 @@
         "year": 1960,
         "images": [
             "groot.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 36,
@@ -421,7 +456,8 @@
         "year": 1964,
         "images": [
             "hawkeye.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 37,
@@ -432,7 +468,8 @@
         "year": 1999,
         "images": [
             "hawkgirl.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 38,
@@ -443,7 +480,8 @@
         "year": 1982,
         "images": [
             "iron_monger.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 39,
@@ -454,7 +492,8 @@
         "year": 1969,
         "images": [
             "killmonger.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 40,
@@ -466,7 +505,8 @@
         "images": [
             "loki.jpg",
             "loki1.jpg"
-        ]
+        ],
+        "img_count": 2
     },
     {
         "id": 41,
@@ -477,7 +517,8 @@
         "year": 1984,
         "images": [
             "malekith.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 42,
@@ -489,7 +530,8 @@
         "images": [
             "mister_fantastic.jpg",
             "mister_fantastic1.jpg"
-        ]
+        ],
+        "img_count": 2
     },
     {
         "id": 43,
@@ -500,7 +542,8 @@
         "year": 1984,
         "images": [
             "nightwing.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 44,
@@ -511,7 +554,8 @@
         "year": 1963,
         "images": [
             "phoenix.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 45,
@@ -522,7 +566,8 @@
         "year": 1964,
         "images": [
             "quicksilver.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 46,
@@ -533,7 +578,8 @@
         "year": 1981,
         "images": [
             "rouge.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 47,
@@ -544,7 +590,8 @@
         "year": 1964,
         "images": [
             "scarlet_witch.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 48,
@@ -555,7 +602,8 @@
         "year": 2014,
         "images": [
             "spider_gwen.jpg"
-        ]
+        ],
+        "img_count": 1
     },
     {
         "id": 49,
@@ -567,7 +615,8 @@
         "images": [
             "spider_man.jpg",
             "spider_man1.jpg"
-        ]
+        ],
+        "img_count": 2
     },
     {
         "id": 50,
@@ -579,6 +628,7 @@
         "images": [
             "star_lord.jpg",
             "star_lord1.jpg"
-        ]
+        ],
+        "img_count": 2
     }
 ]

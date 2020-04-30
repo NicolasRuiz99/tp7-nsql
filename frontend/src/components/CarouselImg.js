@@ -8,8 +8,8 @@ const CarouselImg = ({images}) => {
                         <Carousel.Item>
                             <img
                             className="img-thumbnail"
-                            src={require (`../images/${item}`)}
-                            alt="Third slide"
+                            src={`http://localhost:5000/image/${item}`}
+                            alt="NO IMAGE"
                             height="330" 
                             width="560"
                             />
