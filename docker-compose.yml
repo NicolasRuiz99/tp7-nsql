@@ -2,7 +2,7 @@ version: "3"
 services:
   backend:
     build: ./backend
-    container_name: 'tp_superheroes_backend'
+    container_name: 'tp_peliculas_backend'
     command: sh -c 'python app.py'
     ports:
       - '5000:5000'
@@ -19,7 +19,7 @@ services:
 
   frontend:
     build: ./frontend
-    container_name: 'tp_superheroes_frontend'
+    container_name: 'tp_peliculas_frontend'
     command: sh -c 'npm install; npm start'
     ports:
       - '3000:3000'
