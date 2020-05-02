@@ -43,7 +43,7 @@ const AddMovie = ({history}) => {
             if (res.value){
                 getAPImovieCast (item.id)
                 .then (res=>{
-                    const item = {
+                    const data = {
                         id:item.id,
                         title:item.title,
                         release_date:item.release_date,
@@ -52,12 +52,12 @@ const AddMovie = ({history}) => {
                         cast:res.cast
                     }
             
-                    movieaddItem(item)
+                    movieaddItem(data)
                     .then (res=>{
                         alertSuccess()
                         .then (()=>{
-                            history.push('/movie');
-                        });
+                            history.push('/')
+                        })
                     })
                     .catch (err=>{
                         alertError();
@@ -78,7 +78,7 @@ const AddMovie = ({history}) => {
         <Fragment>
             <div className="jumbotron">
                 <h1 className="display-3">Cargar película</h1>
-                <p className="lead">Ingrese un nombre de una película para obtener su itemrmación y cargarla a la base de datos.</p>
+                <p className="lead">Ingrese un nombre de una película para obtener su información y cargarla a la base de datos.</p>
                 <hr className="my-4"/>
                 <p class="text-info">Se mostrarán los primeros 10 resultados.</p>
                 <form className="form-inline my-2 my-lg-0" onSubmit={search}>

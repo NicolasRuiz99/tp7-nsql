@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import List from './List';
 import Error from './Error';
 import Loading from './Loading';
-import {herolistAll,herolistMarvel,herolistDC} from '../functions';
+import {herolistAll,herolistMarvel,herolistDC, movielistAll} from '../functions';
 
 const Home = ({type,search}) => {
 
@@ -17,7 +17,11 @@ const Home = ({type,search}) => {
         if (search === ""){
             setFilterList (list);
         }else{
-            setFilterList (list.filter((item)=> item.name.toLowerCase().includes(search.toLowerCase())))
+            if (type === 4){
+                setFilterList (list.filter((item)=> item.title.toLowerCase().includes(search.toLowerCase())));
+            }else{
+                setFilterList (list.filter((item)=> item.name.toLowerCase().includes(search.toLowerCase())));
+            }   
         }
     },[search])
 
@@ -30,7 +34,9 @@ const Home = ({type,search}) => {
             case 1:
                 herolistAll()
                 .then ((res)=>{
-                    if (res === null){
+                    if ((res === null) || (res.length == 0)){
+                        setFilterList ([])
+                        setLoading (false);
                         setEmpty (true);
                         return;
                     }else{
@@ -48,7 +54,9 @@ const Home = ({type,search}) => {
             case 2:
                 herolistMarvel()
                 .then ((res)=>{
-                    if (res === null){
+                    if ((res === null) || (res.length == 0)){
+                        setFilterList ([])
+                        setLoading (false);
                         setEmpty (true);
                         return;
                     }else{
@@ -66,7 +74,29 @@ const Home = ({type,search}) => {
             case 3:
                 herolistDC()
                 .then ((res)=>{
-                    if (res === null){
+                    if ((res === null) || (res.length == 0)){
+                        setFilterList ([])
+                        setLoading (false);
+                        setEmpty (true);
+                        return;
+                    }else{
+                        setList(res);
+                        setFilterList (res);
+                        setLoading (false);
+                    }
+                })
+                .catch((err)=>{
+                    setLoading (false);
+                    setError (true);
+                    return;
+                })
+            break;
+            case 4:
+                movielistAll()
+                .then ((res)=>{
+                    if ((res === null) || (res.length == 0)){
+                        setFilterList ([])
+                        setLoading (false);
                         setEmpty (true);
                         return;
                     }else{
@@ -93,7 +123,7 @@ const Home = ({type,search}) => {
             <div>
                 {(error)? <Error mensaje={"Ocurrió un error en el servidor"} /> : null}
                 {(empty)? <Error mensaje={"No hay datos para mostrar"} /> : null}
-                <List list={filterList} />
+                <List list={filterList}/>
             </div>
             }
         </div>

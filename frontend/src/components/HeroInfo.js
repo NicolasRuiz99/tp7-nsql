@@ -4,6 +4,7 @@ import { heroget,modItem,alertConfirm, alertSuccess, alertError, deleteItem } fr
 import Loading from "./Loading";
 import Error from "./Error";
 import CarouselImg from "./CarouselImg";
+import HeroMovieList from "./HeroMovieList";
 
 const HeroInfo = ({id,history}) => {
 
@@ -23,18 +24,23 @@ const HeroInfo = ({id,history}) => {
         setLoading (true);
         heroget (parseInt(id))
         .then((res)=>{
-            setInfo (res);
-            setName (res.name);
-            setCharacter (res.character);
-            setBiography (res.biography);
-            setHouse (res.house);
-            setYear (res.year);
-            if (res.equipment){
-                setEquipment (res.equipment);
-            }
-            setImg_count (res.img_count);
-            setCountImages (res.images.slice(0,res.img_count))
-            setLoading (false);
+            if (res !== null){
+                setInfo (res);
+                setName (res.name);
+                setCharacter (res.character);
+                setBiography (res.biography);
+                setHouse (res.house);
+                setYear (res.year);
+                if (res.equipment){
+                    setEquipment (res.equipment);
+                }
+                setImg_count (res.img_count);
+                setCountImages (res.images.slice(0,res.img_count))
+                setLoading (false);
+            }else{
+                setError (true);
+                setLoading (false);
+            }  
         })
         .catch((err)=>{
             setLoading (false);
@@ -83,7 +89,7 @@ const HeroInfo = ({id,history}) => {
                 .then (res=>{
                     alertSuccess ()
                     .then (res=>{
-                        history.push('/');
+                        history.push('/hero');
                     })
                 })
                 .catch (err=>{
@@ -170,6 +176,14 @@ const HeroInfo = ({id,history}) => {
                                             setCountImages (info.images.slice(0,e.target.value));
                                         }}  min="1" max={info.images.length} required/>
                                         </div>
+                                    :
+                                    null
+                                    }
+                                    {(info.movies)?
+                                    <div>
+                                    <h5>Películas</h5>
+                                    <HeroMovieList list={info.movies} />
+                                    </div>
                                     :
                                     null
                                     }

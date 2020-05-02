@@ -10,8 +10,14 @@
             "hulk1.jpg",
             "hulk2.jpg"
         ],
-        "img_count": 3
-    },
+        "img_count": 3,
+        "movies": [{
+            "id": 24428,
+            "title": "The Avengers"
+        }]
+    }
+
+    ,
     {
         "id": 2,
         "name": "Ant-Man",
@@ -24,10 +30,12 @@
             "ant_man1.jpg"
         ],
         "img_count": 2
-    },
+    }
+
+    ,
     {
         "id": 3,
-        "name": "Thor",
+        "name": "Thor Odinson",
         "character": "",
         "biography": "El Padre De Thor, Odín, Decide Que Su Hijo Necesita Que Le Enseñe La Humildad Y, En Consecuencia, Coloca A Thor (Sin Recuerdos De La Divinidad) En El Cuerpo Y Los Recuerdos De Un Estudiante De Medicina Humana Existente, Parcialmente Discapacitado, Donald Blake. Después De Convertirse En Médico Y De Vacaciones En Noruega, Blake Presencia La Llegada De Una Partida De Exploración Alienígena. Blake Huye De Los Extraterrestres A Una Cueva. Después De Descubrir El Martillo De Thor, Mjolnir (Disfrazado Como Un Bastón) Y Golpearlo Contra Una Roca, Se Transforma En El Dios Del Trueno. Más Tarde, En Thor# 159, Se Revela Que Blake Siempre Ha Sido Thor, El Hechizo De Odin Lo Ha Llevado A Olvidar Su Historia Como El Dios Del Trueno Y Creerse Mortal\r\n\r\nDerrotando A Los Alienígenas, Thor Comparte Una Doble Vida Con Su Alter Ego: Tratar A Los Enfermos En Una Práctica Privada Con La Enfermera - Y El Amor Eventual - Jane Foster, Y Defender A La Humanidad Del Mal. La Presencia De Thor En La Tierra Atrae Casi Inmediatamente La Atención De Su Hermano Adoptivo Y Enemigo, Loki. ​Loki Es Responsable Del Surgimiento De Tres De Los Principales Enemigos De Thor: El Hombre Absorbente; El Destructor, Y El Demoledor. En Una Ocasión, Las Tácticas De Loki Fueron Accidentalmente Beneficiosas, Aunque Tuvieron Éxito En Usar Una Ilusión De Hulk Para Llevar A Thor A La Batalla, Resulta En La Formación Del Equipo De Superhéroe, Los Vengadores, Del Cual Thor Es Miembro Fundador Y De Larga Data. Otros Enemigos Tempranos De Thor Incluyen A Zarrko, El Hombre Del Mañana; El Hombre Radiactivo; ​El Hombre De Lava; ​La Cobra; Señor Hyde; La Encantadora Y El Verdugo, Y La Gárgola Gris.",
         "house": "MARVEL",
@@ -38,8 +46,14 @@
             "thor2.jpg"
         ],
         "equipment": "Mjolnir",
-        "img_count": 3
-    },
+        "img_count": 3,
+        "movies": [{
+            "id": 24428,
+            "title": "The Avengers"
+        }]
+    }
+
+    ,
     {
         "id": 4,
         "name": "Red Skull",
@@ -51,7 +65,9 @@
             "red_skull.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 5,
         "name": "Iron Man",
@@ -65,8 +81,19 @@
             "iron_man2.jpg"
         ],
         "equipment": "Mark Armor",
-        "img_count": 3
-    },
+        "img_count": 3,
+        "movies": [{
+                "id": 24428,
+                "title": "The Avengers"
+            },
+            {
+                "id": 315635,
+                "title": "Spider-Man: Homecoming"
+            }
+        ]
+    }
+
+    ,
     {
         "id": 6,
         "name": "Gamora",
@@ -79,7 +106,9 @@
             "gamora1.jpg"
         ],
         "img_count": 2
-    },
+    }
+
+    ,
     {
         "id": 7,
         "name": "Thanos",
@@ -94,7 +123,9 @@
         ],
         "equipment": "Infinity Gauntlet",
         "img_count": 3
-    },
+    }
+
+    ,
     {
         "id": 8,
         "name": "Batman",
@@ -108,8 +139,14 @@
             "batman2.jpg"
         ],
         "equipment": "Batcinturón",
-        "img_count": 3
-    },
+        "img_count": 3,
+        "movies": [{
+            "id": 272,
+            "title": "Batman Begins"
+        }]
+    }
+
+    ,
     {
         "id": 9,
         "name": "Rocket Racoon",
@@ -121,7 +158,9 @@
             "rocket_racoon.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 10,
         "name": "Robin",
@@ -133,7 +172,9 @@
             "robin.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 11,
         "name": "Nick Fury",
@@ -144,7 +185,11 @@
             "nick_fury.jpg"
         ],
         "year": 1963,
-        "img_count": 1
+        "img_count": 1,
+        "movies": [{
+            "id": 24428,
+            "title": "The Avengers"
+        }]
     },
     {
         "id": 12,
@@ -157,7 +202,9 @@
         ],
         "year": 1961,
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 13,
         "name": "Wolverine",
@@ -170,7 +217,9 @@
         ],
         "year": 1974,
         "img_count": 2
-    },
+    }
+
+    ,
     {
         "id": 14,
         "name": "Aquaman",
@@ -184,7 +233,9 @@
         "equipment": "Tridente De Poseidón",
         "year": 1941,
         "img_count": 2
-    },
+    }
+
+    ,
     {
         "id": 15,
         "name": "Wonder Woman",
@@ -197,7 +248,9 @@
         "equipment": " Lasso Of Truth",
         "year": 1941,
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 16,
         "name": "Human Torch",
@@ -209,7 +262,9 @@
         ],
         "year": 1961,
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 17,
         "name": "Invisible Woman",
@@ -222,7 +277,9 @@
         ],
         "year": 1961,
         "img_count": 2
-    },
+    }
+
+    ,
     {
         "id": 18,
         "name": "Green Arrow",
@@ -234,7 +291,9 @@
         ],
         "year": 1941,
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 19,
         "name": "Green Lantern",
@@ -248,7 +307,9 @@
         "equipment": "Power Ring",
         "year": 1940,
         "img_count": 2
-    },
+    }
+
+    ,
     {
         "id": 20,
         "name": "Captain Marvel",
@@ -260,7 +321,9 @@
         ],
         "year": 1968,
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 21,
         "name": "Abomination",
@@ -272,7 +335,9 @@
             "abomination.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 22,
         "name": "Apocalypse",
@@ -284,7 +349,9 @@
             "apocalypse.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 23,
         "name": "Black Panther",
@@ -296,7 +363,9 @@
             "black_panther.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 24,
         "name": "Captain America",
@@ -310,8 +379,19 @@
             "captain_america1.jpg",
             "captain_america2.jpg"
         ],
-        "img_count": 3
-    },
+        "img_count": 3,
+        "movies": [{
+                "id": 24428,
+                "title": "The Avengers"
+            },
+            {
+                "id": 315635,
+                "title": "Spider-Man: Homecoming"
+            }
+        ]
+    }
+
+    ,
     {
         "id": 25,
         "name": "Cyclops",
@@ -323,7 +403,9 @@
             "cyclops.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 26,
         "name": "Daredevil",
@@ -335,7 +417,9 @@
             "daredevil.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 27,
         "name": "Deadpool",
@@ -347,7 +431,9 @@
             "deadpool.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 28,
         "name": "Deathstroke",
@@ -359,7 +445,9 @@
             "deathstroke.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 29,
         "name": "Doctor Strange",
@@ -372,7 +460,9 @@
             "doctor_strange.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 30,
         "name": "Drax",
@@ -384,7 +474,9 @@
             "drax.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 31,
         "name": "Elektra",
@@ -397,7 +489,9 @@
             "elektra.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 32,
         "name": "Falcon",
@@ -410,10 +504,12 @@
             "falcon1.jpg"
         ],
         "img_count": 2
-    },
+    }
+
+    ,
     {
         "id": 33,
-        "name": "Flash",
+        "name": "The Flash",
         "character": "",
         "biography": "Bartholomew Henry \"Barry\" Allen Es Un Científico Asistente De La División De Ciencia Criminal Y Forense Del Departamento De Policía De Ciudad Central En 1956, Conocido Por Ser Lento Y Llegar Siempre Tarde A Su Trabajo, Lo Cual Enojaba A Su Prometida Iris West. Una Noche, Mientras Salía Del Trabajo, Un Rayo Cayó En Su Laboratorio Lleno De Químicos Que Bañaron A Allen, Creando Un Accidente Que Le Otorgaría Una Súper Velocidad E Increíbles Reflejos (También La Capacidad De Viajar En El Tiempo Y Entre Dimensiones). Con Un Traje Rojo Y El Símbolo De Un Rayo (Que Recuerda Al Original Capitán Maravilla De Fawcett Comics), Su Novia Lo Nombró \"Flash\", (Ya Que Cuando Era Niño Algo Veloz Mató A Su Madre Y Barry Dijo Que Fue Como Un Flash) Empezando Así A Combatir El Crimen En Ciudad Central. Como Civil Usaba Un Anillo Del Cual Extraía Su Traje, El Cual Podía Encoger Por Medio De Un Gas. Allen Era Conocido Por En Ocasiones Bromear Contra Sus Enemigos, Y También Una Característica Que Lo Hizo Temido Cuando Regresó De La Muerte Es Tratar A Todos Sus Enemigos Por Igual, A Diferencia De Los Otros Velocistas Que Trataban A Capitán Frío Y A Sus Secuaces Como Tontos Comparados Con Gorilla Grodd Y El Profesor Zoom. En Su Identidad Civil, Almacena El Traje Comprimido En Un Anillo Especial Mediante El Uso De Un Gas Especial Que Podría Comprimir Fibras De Tela A Una Fracción Muy Pequeña De Su Tamaño Normal.\r\n\r\nFlash Se Convirtió En Miembro De La Liga De La Justicia, Y Un Gran Amigo De Hal Jordan, El Linterna Verde. Su Esposa Iris Averiguó La Identidad De Allen, Ya Que Éste Hablaba Dormido, Aunque Barry Le Revelaría Su Secreto Más Tarde. Bart, El Nieto De Ambos, Fue Enviado Desde El Siglo Xxx, Y Adoptado Por Iris En El Siglo Xx. En Los Años 80 La Vida De Flash Comenzó A Colapsar: Iris Fue Asesinada Por El Profesor Zoom; Además, Cuando Allen Iba A Casarse Nuevamente, Zoom Intentó Repetir Su Crimen. Afortunadamente Allen Detuvo Y Mató A Zoom. Asimismo, Allen Descubrió Que El Espíritu De Su Esposa Iris Se Encontraba En El Siglo Xxx, Donde Le Estaban Dando Un Nuevo Cuerpo. Flash Se Retiró Y Se Unió A Iris En El Siglo Xxx. Sin Embargo, Después De Un Mes De Felicidad, La Crisis On Infinite Earths Daría Comienzo.",
         "house": "DC",
@@ -422,7 +518,9 @@
             "flash.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 34,
         "name": "Gambito",
@@ -434,7 +532,9 @@
             "gambito.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 35,
         "name": "Groot",
@@ -446,7 +546,9 @@
             "groot.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 36,
         "name": "Hawkeye",
@@ -457,8 +559,14 @@
         "images": [
             "hawkeye.jpg"
         ],
-        "img_count": 1
-    },
+        "img_count": 1,
+        "movies": [{
+            "id": 24428,
+            "title": "The Avengers"
+        }]
+    }
+
+    ,
     {
         "id": 37,
         "name": "Hawkgirl",
@@ -470,7 +578,9 @@
             "hawkgirl.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 38,
         "name": "Iron Monger",
@@ -482,7 +592,9 @@
             "iron_monger.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 39,
         "name": "Killmonger",
@@ -494,7 +606,9 @@
             "killmonger.jpg"
         ],
         "img_count": 1
-    },
+    }
+
+    ,
     {
         "id": 40,
         "name": "Loki",
@@ -506,7 +620,11 @@
             "loki.jpg",
             "loki1.jpg"
         ],
-        "img_count": 2
+        "img_count": 2,
+        "movies": [{
+            "id": 24428,
+            "title": "The Avengers"
+        }]
     },
     {
         "id": 41,
@@ -616,7 +734,11 @@
             "spider_man.jpg",
             "spider_man1.jpg"
         ],
-        "img_count": 2
+        "img_count": 2,
+        "movies": [{
+            "id": 315635,
+            "title": "Spider-Man: Homecoming"
+        }]
     },
     {
         "id": 50,

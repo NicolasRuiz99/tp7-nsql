@@ -1,6 +1,19 @@
-import React from "react"
+import React,{useEffect,useState} from "react";
+import { movieget } from "../functions";
 
 const SearchItem = ({item,add}) => {
+
+    const [inDB,setInDB] = useState (false);
+
+    useEffect (()=>{
+        movieget (item.id)
+        .then ((res)=>{
+            if (res !== null){
+                setInDB (true);
+            }
+        })
+    },[item])
+
     return (
         <div className="jumbotron">
                     <div className="row row-cols-1 row-cols-md-2">
@@ -13,7 +26,12 @@ const SearchItem = ({item,add}) => {
                             <hr className="my-4"/>
                             <p>Fecha de lanzamiento: {item.release_date}</p>
                             <p className="lead">
+                                {(inDB)?
+                                <a className="btn btn-info" role="button" disabled>Película ya cargada</a>
+                                :
                                 <a className="btn btn-success" onClick={()=> add(item)} role="button">Agregar película</a>
+                                }
+                                
                             </p>
                         </div>
                     </div>

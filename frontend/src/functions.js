@@ -43,6 +43,15 @@ const herolistAll = () => {
         .catch(err => { throw err.response.data })
 }
 
+const movielistAll = () => {
+    return axios
+        .get("http://localhost:5000/movie")
+        .then(res => {
+            return res.data
+        })
+        .catch(err => { throw err.response.data })
+}
+
 const herolistMarvel = () => {
     return axios
         .get("http://localhost:5000/hero/marvel")
@@ -110,6 +119,17 @@ const heroget = (id) => {
         .catch(err => { throw err.response.data })
 }
 
+const movieget = (id) => {
+    return axios
+        .post("http://localhost:5000/movie/get", {
+            id
+        })
+        .then(res => {
+            return res.data
+        })
+        .catch(err => { throw err.response.data })
+}
+
 const upload = (formData) => {
     return axios({
             method: 'post',
@@ -157,5 +177,7 @@ export {
     upload,
     movieaddItem,
     searchAPImovie,
-    getAPImovieCast
+    getAPImovieCast,
+    movielistAll,
+    movieget
 };

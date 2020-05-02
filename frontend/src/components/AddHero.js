@@ -45,7 +45,7 @@ const AddHero = ({history}) => {
                     .then (()=>{
                         alertSuccess ()
                         .then(()=>{
-                            history.push('/');
+                            history.push('/hero');
                         })
                     })
                     .catch ((err)=>{

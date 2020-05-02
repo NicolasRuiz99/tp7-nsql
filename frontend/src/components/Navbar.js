@@ -17,35 +17,27 @@ const Navbar = ({setSearch}) => {
                 Home
               </button>
               <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <Link className="dropdown-item" to="/">Superheroes</Link>
-                <a className="dropdown-item" href="#">Peliculas</a>
+                <Link className="dropdown-item" type="button" to="/hero">Superheroes</Link>
+                <Link className="dropdown-item" type="button" to="/">Películas</Link>
               </div>
             </li>
             <li className="dropdown">
-              <button className="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <Link className="btn btn-primary" type="button" aria-haspopup="true" aria-expanded="false" to="/hero/marvel">
                 Marvel
-              </button>
-              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <Link className="dropdown-item" to="/hero/marvel">Superheroes</Link>
-                <a className="dropdown-item" href="#">Peliculas</a>
-              </div>
-            </li>
+              </Link>
+              </li>
             <li className="dropdown">
-              <button className="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <Link className="btn btn-primary" type="button" aria-haspopup="true" aria-expanded="false" to="/hero/dc">
                 DC
-              </button>
-              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <Link className="dropdown-item" to="/hero/dc">Superheroes</Link>
-                <a className="dropdown-item" href="#">Peliculas</a>
-              </div>
+              </Link>
             </li>
             <li className="dropdown">
-              <button className="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button className="btn btn-primary" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Insertar
               </button>
-              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <Link className="dropdown-item" to="/heroadd">Superheroes</Link>
-                <Link className="dropdown-item" to="/movieadd">Peliculas</Link>
+              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <Link className="dropdown-item" type="button" to="/heroadd">Superheroes</Link>
+                <Link className="dropdown-item" type="button" to="/movieadd">Peliculas</Link>
               </div>
             </li>
           </ul>

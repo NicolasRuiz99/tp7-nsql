@@ -1,9 +1,10 @@
 from flask import Flask
 from flask import render_template, jsonify, request, redirect, url_for,send_file
 import json
-from connectiondb import inicializar_db_heroes,cargar_datos_heroes,inicializar_db_movies
+from connectiondb import inicializar_db_heroes,cargar_datos_heroes,inicializar_db_movies,cargar_datos_movies
 from flask_cors import CORS
 import os
+from pymongo import TEXT
 
 app = Flask(__name__)
 CORS(app)
@@ -26,12 +27,15 @@ def getImage(name):
     except (Exception) as err:
         return str(err), 500
 
-@app.route('/cargar_db_heroes', methods=['GET'])
+@app.route('/cargar_db', methods=['GET'])
 @app.before_first_request
-def cargar_db_heroes():
+def cargar_db():
     try:
-        db = inicializar_db_heroes()
-        cargar_datos_heroes (db)
+        db1 = inicializar_db_heroes()
+        db2 = inicializar_db_movies()
+        cargar_datos_heroes (db1)
+        cargar_datos_movies (db2)
+        db1.list.create_index( [('name', TEXT),('character',TEXT)] )
         return "OK"
     except (Exception) as err:
         return str(err), 500
@@ -50,7 +54,11 @@ def herolistall():
 @app.route('/movie', methods=['GET'])
 def movielistall():
     try:
-        return ""
+        db = inicializar_db_movies()
+        res = []
+        for x in db.list.find({},{"_id":0}):
+            res.append(x)
+        return jsonify (res)
     except (Exception) as err:
         return str(err), 500
 
@@ -65,28 +73,14 @@ def herolistmarvel():
     except (Exception) as err:
         return str(err), 500
 
-@app.route('/movie/marvel', methods=['GET'])
-def movielistmarvel():
-    try:
-        return ""
-    except (Exception) as err:
-        return str(err), 500
-
 @app.route('/hero/dc', methods=['GET'])
 def herolistdc():
     try:
         db = inicializar_db_heroes()
         res = []
-        for x in db.list.find({"house":"DC"},{"_id":0}):
+        for x in db.list.find({"house":"DC"}):
             res.append(x)
         return jsonify (res)
-    except (Exception) as err:
-        return str(err), 500
-
-@app.route('/movie/dc', methods=['GET'])
-def movielistdc():
-    try:
-        return ""
     except (Exception) as err:
         return str(err), 500
 
@@ -95,7 +89,7 @@ def heroget():
     try:
         id = request.json ["id"]
         db = inicializar_db_heroes()
-        res = db.list.find_one({"id":id},{"_id":0})
+        res = db.list.find_one({"_id":id})
         return jsonify (res)
     except (Exception) as err:
         return str(err), 500
@@ -103,7 +97,10 @@ def heroget():
 @app.route('/movie/get', methods=['POST'])
 def movieget():
     try:
-        return ""
+        id = request.json ["id"]
+        db = inicializar_db_movies()
+        res = db.list.find_one({"id":id},{"_id":0})
+        return jsonify (res)
     except (Exception) as err:
         return str(err), 500
 
@@ -122,7 +119,7 @@ def heroadd():
         if 'equipment' in request.json:
             equipment = request.json["equipment"]
             nuevo = {
-                "id":(db.list.count()+1),
+                "id":id(),
                 "name":name,
                 "character":character,
                 "biography":biography,
@@ -134,7 +131,7 @@ def heroadd():
             }
         else:
             nuevo = {
-                "id":(db.list.count()+1),
+                "id": id(),
                 "name":name,
                 "character":character,
                 "biography":biography,
@@ -160,6 +157,27 @@ def movieadd():
         poster_path = request.json["poster_path"]
         cast = request.json["cast"]
 
+        #buscamos todos los heroes y linkeamos las peliculas
+
+        db2 = inicializar_db_heroes ()
+        for element in cast:
+            #si esta dividido por /
+            if '/' in element["character"]:
+                names = element["character"].split(' / ')
+                hero = None
+                for name in names:
+                    if (hero == None):
+                        hero = db2.list.find_one( { "$text": { "$search": "\"" + name + "\"" } } )
+                    else:
+                        break
+       
+            else:
+                hero = db2.list.find_one( { "$text": { "$search": "\"" + element["character"] + "\"" } } )
+
+            if (hero != None):
+                db2.list.update_one({"id":hero["id"]},{"$push" : {"movies": {"id":id,"title":title}}}) 
+                element["id_hero"] = hero["id"]
+
         nuevo = {
             "id":id,
             "title":title,
@@ -169,6 +187,7 @@ def movieadd():
             "cast":cast
         }
         db.list.insert_one(nuevo)
+
         return "OK"
     except (Exception) as err:
         return str(err), 500
