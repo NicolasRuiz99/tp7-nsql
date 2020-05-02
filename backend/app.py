@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template, jsonify, request, redirect, url_for,send_file
 import json
-from connectiondb import inicializar_db,cargar_datos
+from connectiondb import inicializar_db_heroes,cargar_datos_heroes,inicializar_db_movies
 from flask_cors import CORS
 import os
 
@@ -26,20 +26,20 @@ def getImage(name):
     except (Exception) as err:
         return str(err), 500
 
-@app.route('/cargar_db', methods=['GET'])
+@app.route('/cargar_db_heroes', methods=['GET'])
 @app.before_first_request
-def cargar_db():
+def cargar_db_heroes():
     try:
-        db = inicializar_db()
-        cargar_datos (db)
+        db = inicializar_db_heroes()
+        cargar_datos_heroes (db)
         return "OK"
     except (Exception) as err:
         return str(err), 500
 
-@app.route('/', methods=['GET'])
-def listall():
+@app.route('/hero', methods=['GET'])
+def herolistall():
     try:
-        db = inicializar_db()
+        db = inicializar_db_heroes()
         res = []
         for x in db.list.find({},{"_id":0}):
             res.append(x)
@@ -47,10 +47,17 @@ def listall():
     except (Exception) as err:
         return str(err), 500
 
-@app.route('/marvel', methods=['GET'])
-def listmarvel():
+@app.route('/movie', methods=['GET'])
+def movielistall():
     try:
-        db = inicializar_db()
+        return ""
+    except (Exception) as err:
+        return str(err), 500
+
+@app.route('/hero/marvel', methods=['GET'])
+def herolistmarvel():
+    try:
+        db = inicializar_db_heroes()
         res = []
         for x in db.list.find({"house":"MARVEL"},{"_id":0}):
             res.append(x)
@@ -58,10 +65,17 @@ def listmarvel():
     except (Exception) as err:
         return str(err), 500
 
-@app.route('/dc', methods=['GET'])
-def listdc():
+@app.route('/movie/marvel', methods=['GET'])
+def movielistmarvel():
     try:
-        db = inicializar_db()
+        return ""
+    except (Exception) as err:
+        return str(err), 500
+
+@app.route('/hero/dc', methods=['GET'])
+def herolistdc():
+    try:
+        db = inicializar_db_heroes()
         res = []
         for x in db.list.find({"house":"DC"},{"_id":0}):
             res.append(x)
@@ -69,20 +83,34 @@ def listdc():
     except (Exception) as err:
         return str(err), 500
 
-@app.route('/get', methods=['POST'])
-def get():
+@app.route('/movie/dc', methods=['GET'])
+def movielistdc():
+    try:
+        return ""
+    except (Exception) as err:
+        return str(err), 500
+
+@app.route('/hero/get', methods=['POST'])
+def heroget():
     try:
         id = request.json ["id"]
-        db = inicializar_db()
+        db = inicializar_db_heroes()
         res = db.list.find_one({"id":id},{"_id":0})
         return jsonify (res)
     except (Exception) as err:
         return str(err), 500
 
-@app.route('/add', methods=['POST'])
-def add():
+@app.route('/movie/get', methods=['POST'])
+def movieget():
     try:
-        db = inicializar_db()
+        return ""
+    except (Exception) as err:
+        return str(err), 500
+
+@app.route('/hero/add', methods=['POST'])
+def heroadd():
+    try:
+        db = inicializar_db_heroes()
 
         name = request.json ["name"]
         character = request.json ["character"]
@@ -120,10 +148,35 @@ def add():
     except (Exception) as err:
         return str(err), 500
 
-@app.route('/modify', methods=['POST'])
-def modify():
+@app.route('/movie/add', methods=['POST'])
+def movieadd():
     try:
-        db = inicializar_db()
+        db = inicializar_db_movies ()
+
+        title = request.json["title"]
+        id = request.json["id"]
+        release_date = request.json["release_date"]
+        overview = request.json["overview"]
+        poster_path = request.json["poster_path"]
+        cast = request.json["cast"]
+
+        nuevo = {
+            "id":id,
+            "title":title,
+            "release_date":release_date,
+            "overview":overview,
+            "poster_path":poster_path,
+            "cast":cast
+        }
+        db.list.insert_one(nuevo)
+        return "OK"
+    except (Exception) as err:
+        return str(err), 500
+
+@app.route('/hero/modify', methods=['POST'])
+def heromodify():
+    try:
+        db = inicializar_db_heroes()
 
         id = request.json["id"]
         name = request.json ["name"]
@@ -151,11 +204,11 @@ def modify():
     except (Exception) as err:
         return str(err), 500
 
-@app.route('/delete', methods=['POST'])
-def delete():
+@app.route('/hero/delete', methods=['POST'])
+def herodelete():
     try:
         id = request.json ["id"]
-        db = inicializar_db()
+        db = inicializar_db_heroes()
         res = db.list.delete_one({"id":id})
         return "OK"
     except (Exception) as err:

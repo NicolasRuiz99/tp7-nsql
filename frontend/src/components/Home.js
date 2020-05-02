@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import List from './List';
 import Error from './Error';
 import Loading from './Loading';
-import {listAll,listMarvel,listDC} from '../functions';
+import {herolistAll,herolistMarvel,herolistDC} from '../functions';
 
 const Home = ({type,search}) => {
 
@@ -17,8 +17,6 @@ const Home = ({type,search}) => {
         if (search === ""){
             setFilterList (list);
         }else{
-            console.log('entro');
-            
             setFilterList (list.filter((item)=> item.name.toLowerCase().includes(search.toLowerCase())))
         }
     },[search])
@@ -30,7 +28,7 @@ const Home = ({type,search}) => {
         setLoading (true);
         switch (type){
             case 1:
-                listAll()
+                herolistAll()
                 .then ((res)=>{
                     if (res === null){
                         setEmpty (true);
@@ -48,7 +46,7 @@ const Home = ({type,search}) => {
                 })
             break;
             case 2:
-                listMarvel()
+                herolistMarvel()
                 .then ((res)=>{
                     if (res === null){
                         setEmpty (true);
@@ -66,7 +64,7 @@ const Home = ({type,search}) => {
                 })
             break;
             case 3:
-                listDC()
+                herolistDC()
                 .then ((res)=>{
                     if (res === null){
                         setEmpty (true);

@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from "react";
 import {withRouter} from 'react-router-dom';
-import { get,modItem,alertConfirm, alertSuccess, alertError, deleteItem } from "../functions";
+import { heroget,modItem,alertConfirm, alertSuccess, alertError, deleteItem } from "../functions";
 import Loading from "./Loading";
 import Error from "./Error";
 import CarouselImg from "./CarouselImg";
@@ -21,7 +21,7 @@ const HeroInfo = ({id,history}) => {
 
     useEffect (()=>{
         setLoading (true);
-        get (parseInt(id))
+        heroget (parseInt(id))
         .then((res)=>{
             setInfo (res);
             setName (res.name);

@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import HeroInfo from './components/HeroInfo';
 import './bootstrap.min.css';
 import AddHero from './components/AddHero';
+import AddMovie from './components/AddMovie';
 
 const App = () => {
 
@@ -21,13 +22,13 @@ const App = () => {
 						search = {search}
 					/>
 				)} />
-				<Route exact path="/marvel" render={()=>(
+				<Route exact path="/hero/marvel" render={()=>(
 					<Home 
 						type = {2}
 						search = {search}
 					/>
 				)} />
-				<Route exact path="/dc" render={()=>(
+				<Route exact path="/hero/dc" render={()=>(
 					<Home 
 						type = {3}
 						search = {search}
@@ -38,7 +39,8 @@ const App = () => {
 						id = {props.match.params.id}
 					/>
 				)} />
-				<Route exact path="/add" component={AddHero} />
+				<Route exact path="/heroadd" component={AddHero} />
+				<Route exact path="/movieadd" component={AddMovie} />
 			</Switch>
 			</Router>
 		</Fragment>

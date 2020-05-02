@@ -1,6 +1,8 @@
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
+//alert functions
+
 const alertSuccess = () => {
     return Swal.fire(
         'Éxito!',
@@ -30,27 +32,29 @@ const alertConfirm = () => {
     })
 }
 
-const listAll = () => {
+//backend request functions
+
+const herolistAll = () => {
     return axios
-        .get("http://localhost:5000/")
+        .get("http://localhost:5000/hero")
         .then(res => {
             return res.data
         })
         .catch(err => { throw err.response.data })
 }
 
-const listMarvel = () => {
+const herolistMarvel = () => {
     return axios
-        .get("http://localhost:5000/marvel")
+        .get("http://localhost:5000/hero/marvel")
         .then(res => {
             return res.data
         })
         .catch(err => { throw err.response.data })
 }
 
-const listDC = () => {
+const herolistDC = () => {
     return axios
-        .get("http://localhost:5000/dc")
+        .get("http://localhost:5000/hero/dc")
         .then(res => {
             return res.data
         })
@@ -59,7 +63,7 @@ const listDC = () => {
 
 const deleteItem = (id) => {
     return axios
-        .post("http://localhost:5000/delete", {
+        .post("http://localhost:5000/hero/delete", {
             id
         })
         .then(res => {
@@ -68,9 +72,18 @@ const deleteItem = (id) => {
         .catch(err => { throw err.response.data })
 }
 
-const addItem = (item) => {
+const heroaddItem = (item) => {
     return axios
-        .post("http://localhost:5000/add", item)
+        .post("http://localhost:5000/hero/add", item)
+        .then(res => {
+            return res.data
+        })
+        .catch(err => { throw err.response.data })
+}
+
+const movieaddItem = (item) => {
+    return axios
+        .post("http://localhost:5000/movie/add", item)
         .then(res => {
             return res.data
         })
@@ -79,27 +92,16 @@ const addItem = (item) => {
 
 const modItem = (item) => {
     return axios
-        .post("http://localhost:5000/modify", item)
+        .post("http://localhost:5000/hero/modify", item)
         .then(res => {
             return res.data
         })
         .catch(err => { throw err.response.data })
 }
 
-const search = (name) => {
+const heroget = (id) => {
     return axios
-        .post("http://localhost:5000/search", {
-            name
-        })
-        .then(res => {
-            return res.data
-        })
-        .catch(err => { throw err.response.data })
-}
-
-const get = (id) => {
-    return axios
-        .post("http://localhost:5000/get", {
+        .post("http://localhost:5000/hero/get", {
             id
         })
         .then(res => {
@@ -121,17 +123,39 @@ const upload = (formData) => {
         .catch(err => { throw err.response.data })
 }
 
+//API functions
+
+const searchAPImovie = (query) => {
+    return axios
+        .get(`https://api.themoviedb.org/3/search/movie?api_key=6219c1b0835cb6191273f70128265f35&query=${query}`)
+        .then(res => {
+            return res.data
+        })
+        .catch(err => { throw err.response.data })
+}
+
+const getAPImovieCast = (id) => {
+    return axios
+        .get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=6219c1b0835cb6191273f70128265f35`)
+        .then(res => {
+            return res.data
+        })
+        .catch(err => { throw err.response.data })
+}
+
 export {
     alertConfirm,
     alertError,
     alertSuccess,
-    listAll,
+    herolistAll,
     deleteItem,
     modItem,
-    listMarvel,
-    listDC,
-    search,
-    get,
-    addItem,
-    upload
+    herolistMarvel,
+    herolistDC,
+    heroget,
+    heroaddItem,
+    upload,
+    movieaddItem,
+    searchAPImovie,
+    getAPImovieCast
 };

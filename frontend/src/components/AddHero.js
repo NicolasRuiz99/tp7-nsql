@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import {withRouter} from 'react-router-dom';
-import {alertConfirm, alertSuccess, alertError,addItem, upload} from "../functions";
+import {alertConfirm, alertSuccess, alertError,heroaddItem, upload} from "../functions";
 
 const AddHero = ({history}) => {
 
@@ -41,9 +41,7 @@ const AddHero = ({history}) => {
                 }              
                 upload(files)
                 .then ((res)=>{
-                    console.log(res);
-                    
-                    addItem (data)
+                    heroaddItem (data)
                     .then (()=>{
                         alertSuccess ()
                         .then(()=>{
