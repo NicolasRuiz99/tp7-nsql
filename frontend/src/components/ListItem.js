@@ -30,7 +30,7 @@ const ListItem = ({item}) => {
                 </div>
                 <div className="card-body">
                     <p className="card-text">{item.biography.slice(0,150)}...</p>
-                    <Link type="button" className="btn btn-light" to={`/hero/${item.id}`} >Ver detalles</Link>
+                    <Link type="button" className="btn btn-light" to={`/hero/${item._id}`} >Ver detalles</Link>
                 </div>
                 </div>
             </div>

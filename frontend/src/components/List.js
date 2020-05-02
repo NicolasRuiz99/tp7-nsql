@@ -7,7 +7,7 @@ const List = ({list}) => {
             <div className="row row-cols-1 row-cols-md-6">
             {list.map(item => (
                         <ListItem 
-                            key = {item.id}
+                            key = {item._id}
                             item = {item}
                         />
             ))}

@@ -24,10 +24,3 @@ def cargar_datos_heroes (db):
     
     db.list.drop()
     db.list.insert_many(file_data)
-
-def cargar_datos_movies (db):
-    with open('movies.json') as f:
-        file_data = json.load(f)
-    
-    db.list.drop()
-    db.list.insert_many(file_data)

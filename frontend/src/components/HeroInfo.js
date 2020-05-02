@@ -22,7 +22,7 @@ const HeroInfo = ({id,history}) => {
 
     useEffect (()=>{
         setLoading (true);
-        heroget (parseInt(id))
+        heroget (id)
         .then((res)=>{
             if (res !== null){
                 setInfo (res);
@@ -56,7 +56,7 @@ const HeroInfo = ({id,history}) => {
         .then ((res=>{
             if (res.value){
                 let data = {
-                        id:info.id,
+                        id:info._id,
                         name,
                         character,
                         biography,
@@ -85,7 +85,7 @@ const HeroInfo = ({id,history}) => {
         alertConfirm ()
         .then (res=>{
             if (res.value){
-                deleteItem (info.id)
+                deleteItem (info._id)
                 .then (res=>{
                     alertSuccess ()
                     .then (res=>{

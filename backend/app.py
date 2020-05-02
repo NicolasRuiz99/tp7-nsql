@@ -1,10 +1,11 @@
 from flask import Flask
 from flask import render_template, jsonify, request, redirect, url_for,send_file
 import json
-from connectiondb import inicializar_db_heroes,cargar_datos_heroes,inicializar_db_movies,cargar_datos_movies
+from connectiondb import inicializar_db_heroes,cargar_datos_heroes,inicializar_db_movies
 from flask_cors import CORS
 import os
 from pymongo import TEXT
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 CORS(app)
@@ -33,8 +34,8 @@ def cargar_db():
     try:
         db1 = inicializar_db_heroes()
         db2 = inicializar_db_movies()
+        db2.list.drop()
         cargar_datos_heroes (db1)
-        cargar_datos_movies (db2)
         db1.list.create_index( [('name', TEXT),('character',TEXT)] )
         return "OK"
     except (Exception) as err:
@@ -45,7 +46,8 @@ def herolistall():
     try:
         db = inicializar_db_heroes()
         res = []
-        for x in db.list.find({},{"_id":0}):
+        for x in db.list.find({}):
+            x["_id"] = str(x["_id"])
             res.append(x)
         return jsonify (res)
     except (Exception) as err:
@@ -67,7 +69,8 @@ def herolistmarvel():
     try:
         db = inicializar_db_heroes()
         res = []
-        for x in db.list.find({"house":"MARVEL"},{"_id":0}):
+        for x in db.list.find({"house":"MARVEL"}):
+            x["_id"] = str(x["_id"])
             res.append(x)
         return jsonify (res)
     except (Exception) as err:
@@ -79,6 +82,7 @@ def herolistdc():
         db = inicializar_db_heroes()
         res = []
         for x in db.list.find({"house":"DC"}):
+            x["_id"] = str(x["_id"])
             res.append(x)
         return jsonify (res)
     except (Exception) as err:
@@ -89,7 +93,8 @@ def heroget():
     try:
         id = request.json ["id"]
         db = inicializar_db_heroes()
-        res = db.list.find_one({"_id":id})
+        res = db.list.find_one({"_id":ObjectId(id)})
+        res["_id"] = str(res["_id"])
         return jsonify (res)
     except (Exception) as err:
         return str(err), 500
@@ -119,7 +124,6 @@ def heroadd():
         if 'equipment' in request.json:
             equipment = request.json["equipment"]
             nuevo = {
-                "id":id(),
                 "name":name,
                 "character":character,
                 "biography":biography,
@@ -131,7 +135,6 @@ def heroadd():
             }
         else:
             nuevo = {
-                "id": id(),
                 "name":name,
                 "character":character,
                 "biography":biography,
@@ -161,22 +164,21 @@ def movieadd():
 
         db2 = inicializar_db_heroes ()
         for element in cast:
+            hero = None
             #si esta dividido por /
             if '/' in element["character"]:
                 names = element["character"].split(' / ')
-                hero = None
                 for name in names:
                     if (hero == None):
                         hero = db2.list.find_one( { "$text": { "$search": "\"" + name + "\"" } } )
                     else:
                         break
-       
             else:
                 hero = db2.list.find_one( { "$text": { "$search": "\"" + element["character"] + "\"" } } )
 
             if (hero != None):
-                db2.list.update_one({"id":hero["id"]},{"$push" : {"movies": {"id":id,"title":title}}}) 
-                element["id_hero"] = hero["id"]
+                db2.list.update_one({"_id":hero["_id"]},{"$push" : {"movies": {"id":id,"title":title}}}) 
+                element["id_hero"] = str(hero["_id"])
 
         nuevo = {
             "id":id,
@@ -208,7 +210,6 @@ def heromodify():
         img_count = request.json ["img_count"]
 
         nuevo = {
-            "id":id,
             "name":name,
             "character":character,
             "biography":biography,
@@ -218,7 +219,7 @@ def heromodify():
             "equipment":equipment,
             "img_count":img_count
         }
-        db.list.update_one({"id":nuevo["id"]},{"$set":nuevo})
+        db.list.update_one({"_id":ObjectId(id)},{"$set":nuevo})
         return "OK"
     except (Exception) as err:
         return str(err), 500
@@ -228,7 +229,7 @@ def herodelete():
     try:
         id = request.json ["id"]
         db = inicializar_db_heroes()
-        res = db.list.delete_one({"id":id})
+        res = db.list.delete_one({"_id":ObjectId(id)})
         return "OK"
     except (Exception) as err:
         return str(err), 500
